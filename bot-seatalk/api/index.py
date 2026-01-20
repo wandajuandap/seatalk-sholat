@@ -5,11 +5,8 @@ import os
 
 app = Flask(__name__)
 
-# --- KONFIGURASI SEATALK ---
-# Disarankan menggunakan Environment Variables di Vercel nanti
-# Tapi untuk tes, bisa isi langsung di sini (Hati-hati jangan share kode ini ke publik jika ada rahasianya)
-APP_ID = os.environ.get("APP_ID", "MASUKKAN_APP_ID_DISINI")
-APP_SECRET = os.environ.get("APP_SECRET", "MASUKKAN_APP_SECRET_DISINI")
+APP_ID = os.environ.get("APP_ID", "NDAwNzUwNzc4MDg4")
+APP_SECRET = os.environ.get("APP_SECRET", "XqVrdxqVtUzmbityfKzEvdrAUdh7FYdr")
 
 def get_seatalk_token():
     url = "https://openapi.seatalk.io/auth/app_access_token"
@@ -91,6 +88,3 @@ def handler(path):
             print(f"Error: {e}")
             
     return "SeaTalk Bot is Running 24/7 on Vercel!"
-
-# Handler untuk Vercel Serverless
-# Vercel akan mencari variable 'app' secara otomatis
